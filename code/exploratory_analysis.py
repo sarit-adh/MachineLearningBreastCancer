@@ -16,30 +16,16 @@ bc_data = read_data_from_file(filepath,column_names,"ID_number")
 
 
 #exploratory data analysis
-#print_summary(bc_data)
-#bc_data_subset = select_columns(bc_data,[2,3,4,5])
+print_summary(bc_data)
+bc_data_subset = select_columns(bc_data,[2,3,4,5])
 
 #univariate plot
-#bc_data_subset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-#plt.show()
+bc_data_subset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+plt.show()
 
 #multivariate plot
-#scatter_matrix(bc_data_subset)
-#plt.show()
-
-#split the dataset into train and test set
-bc_df_values = bc_data.values
-X = bc_df_values[:,2:31]
-Y = bc_df_values[:,1]
-test_set_size = 0.2
-seed = 1
-X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X,Y,test_size = test_set_size,random_state=seed) 
-
-print X_train
-
-#print select_rows(bc_data,"84300903")
+scatter_matrix(bc_data_subset)
+plt.show()
 
 
-#print select_rows(bc_data,0,3)
-#print select_columns(bc_data,[1,3])
 
